@@ -5,10 +5,14 @@ info:
 
 http:
   method: POST
-  url: "{{BASE_URL}}api/login_check"
+  url: "{{BASE_URL}}api/auth/login"
   body:
     type: json
-    data: ""
+    data: |-
+      {
+        "username": "griffithluciano@gmail.com",
+        "password": "password"
+      }
   auth: inherit
 
 settings:

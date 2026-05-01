@@ -6,6 +6,14 @@ info:
 http:
   method: POST
   url: "{{BASE_URL}}api/auth/register"
+  body:
+    type: json
+    data: |-
+      {
+        "id": "c1b90864-3328-44d1-9ab7-4bd07345be8e",
+        "email": "griffithluciano@gmail.com",
+        "password": "password"
+      }
   auth: inherit
 
 settings:

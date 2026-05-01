@@ -8,7 +8,7 @@ use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\HandledStamp;
 
-final class MessengerQueryBus implements QueryBusInterface
+final readonly class MessengerQueryBus implements QueryBusInterface
 {
     public function __construct(
         private readonly MessageBusInterface $queryBus,
@@ -16,6 +16,9 @@ final class MessengerQueryBus implements QueryBusInterface
     {
     }
 
+    /**
+     * @throws \Throwable
+     */
     public function ask(object $query): QueryResult
     {
         try {

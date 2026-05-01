@@ -2,7 +2,7 @@
 
 namespace App\Features\Auth\Application\RegisterUserCommand;
 
-use App\Domain\Users\Aggregates\UserAggregate;
+use App\Domain\Users\Aggregates\User;
 use App\Domain\Users\Repositories\UserRepositoryInterface;
 use App\Domain\Users\ValueObjects\UserId;
 use App\Shared\Application\CommandResult;
@@ -27,8 +27,15 @@ final readonly class RegisterUserHandler
         }
 
         $userId = UserId::from($command->id);
-        $user = UserAggregate::create(id: $userId, email: $command->email);
-        $this->userRepository->register($user, $command->password);
+        $userResult = User::create(id: $userId, email: $command->email);
+
+        if ($userResult->isErr()) {
+            return CommandResult::err(
+                UseCaseError::conflict($userResult->unwrapErr())
+            );
+        }
+
+        $this->userRepository->register($userResult->unwrap(), $command->password);
 
         return CommandResult::ok();
     }

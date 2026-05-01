@@ -2,13 +2,13 @@
 
 namespace App\Domain\Users\Repositories;
 
-use App\Domain\Users\Aggregates\UserAggregate;
+use App\Domain\Users\Aggregates\User;
 
 interface UserRepositoryInterface
 {
-    public function findByEmail(string $email): ?UserAggregate;
+    public function findByEmail(string $email): ?User;
 
-    public function save(UserAggregate $aggregate): void;
+    public function save(User $aggregate): void;
 
-    public function register(UserAggregate $aggregate, string $password): void;
+    public function register(User $aggregate, string $password): void;
 }

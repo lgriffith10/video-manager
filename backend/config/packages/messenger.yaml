@@ -9,3 +9,20 @@ framework:
                 default_middleware:
                     enabled: true
                     allow_no_handlers: false
+            infrastructure_job.bus:
+                default_middleware:
+                    enabled: true
+                    allow_no_handlers: false
+
+        transports:
+            async:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                options:
+                    exchange:
+                        name: infrastructure_jobs
+                        type: direct
+                    queues:
+                        infrastructure_jobs: ~
+
+        routing:
+            App\Shared\Application\InfrastructureJobInterface: async

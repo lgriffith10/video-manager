@@ -2,6 +2,22 @@ opencollection: 1.0.0
 
 info:
   name: Bruno
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  auth:
+    type: bearer
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Nzc3MjI2OTUsImV4cCI6MTc3NzcyNjI5NSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWxleGlzQGdtYWlsLmNvbSJ9.n0x2Y_7WwpO3KSvnKRezgrB-jLwGoYzz4bUu5DDiKA7IYx8DMhh77tfKJEywQyQLyv6uTtTkHyP2CL4S6RqwjsL57bFqemTBzNotS7QPPhl6HVswg3QaK-vervKl0_BJW4i1l7A-TFcretiejAxrITHfiTd99i8wSU4HiVX9kQG68xjynumfgZC0DVc-Hd7ynz84bdcyAxeVQD0daAyVlTqnvJFSOMNSOBlNsdLuaD95Jn1AQHPbxxhDEvRxgMDxdunN_sU4ZgIxEfKmDt9krY87Mg9VIPEu9Qn3WzMWr63x5RQod7PIMr0TihZbnFDLY4n3ERqrXRy2gG44yEumGg
 bundled: false
 extensions:
   bruno:

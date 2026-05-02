@@ -11,4 +11,8 @@ interface FileStorageInterface
     public function exists(string $path): bool;
 
     public function publicUrl(string $path): string;
+
+    public function presignedUploadUrl(string $path, string $mimeType, int $ttlSeconds = 3600): string;
+
+    public function presignedDownloadUrl(string $path, int $ttlSeconds = 3600): string;
 }

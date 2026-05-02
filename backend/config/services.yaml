@@ -28,3 +28,9 @@ services:
         class: App\Shared\Infrastructure\Bus\MessengerQueryBus
         arguments:
             $queryBus: '@query.bus'
+
+    App\Shared\Domain\Storage\FileStorageInterface:
+        class: App\Shared\Infrastructure\Storage\FlysystemFileStorage
+        arguments:
+            $s3Client: '@s3_client'
+            $s3Bucket: '%env(S3_BUCKET)%'

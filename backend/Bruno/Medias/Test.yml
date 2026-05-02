@@ -1,0 +1,42 @@
+info:
+  name: Test
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: http://localhost:9000/projet-video/medias/cfd34b8a-7c3c-440c-8595-15ed7acd46a3/document.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minio%2F20260502%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260502T115346Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=30a0a3c172ea4e3319e5b9cbd50f8265a060d99b724b5f287cef79d431a42809
+  params:
+    - name: X-Amz-Content-Sha256
+      value: UNSIGNED-PAYLOAD
+      type: query
+    - name: X-Amz-Algorithm
+      value: AWS4-HMAC-SHA256
+      type: query
+    - name: X-Amz-Credential
+      value: minio%2F20260502%2Fus-east-1%2Fs3%2Faws4_request
+      type: query
+    - name: X-Amz-Date
+      value: 20260502T115346Z
+      type: query
+    - name: X-Amz-SignedHeaders
+      value: host
+      type: query
+    - name: X-Amz-Expires
+      value: "3600"
+      type: query
+    - name: X-Amz-Signature
+      value: 30a0a3c172ea4e3319e5b9cbd50f8265a060d99b724b5f287cef79d431a42809
+      type: query
+  body:
+    type: file
+    data:
+      - filePath: C:\Users\griff\Downloads\cahier-des-charges-saas-videaste.pdf
+        contentType: application/pdf
+        selected: true
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

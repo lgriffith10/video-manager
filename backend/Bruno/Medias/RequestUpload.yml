@@ -1,18 +1,17 @@
 info:
-  name: Register
+  name: RequestUpload
   type: http
   seq: 1
 
 http:
   method: POST
-  url: "{{BASE_URL}}api/auth/register"
+  url: "{{BASE_URL}}api/medias/request-upload"
   body:
     type: json
     data: |-
       {
-        "id": "f4831279-c295-4b18-8713-4570bdace606",
-        "email": "alexis@gmail.com",
-        "password": "password"
+        "name": "document.pdf",
+        "mimeType": "application/pdf"
       }
   auth: inherit
 
